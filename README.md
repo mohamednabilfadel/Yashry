@@ -50,4 +50,25 @@ by loading the home page (index.php)
             
 
                         
+*faced obstacles and solutions:
+
+-on the home page when submitting each item separately with php, the page was refreshing.
+            -solution: used javascript to collect the chosen items and their quantities and put them in one menut
+            which after that will be submitted using php.
+
+
+-each 2 t-shirts should give you an offer of 50% off for a jacket, but testing the code found that if I bought 4 t-shirts and 
+one jacket this will give me 100% off the jacket.
+            -solution: 
+                        -used a variable to assign number of offers available depending on number of t-shirts using:
+                                    -number of t-shirts divided by 2. then floor() this number to get the lowest in case of dicimal.
+                        -then used if condition to check if the number of jackets equals or more than the allowed offers.
+                                    -if number of jackets less than the allowed offers, make the number of offers equals to the jackets quantity.
+                                    -else the code runs normally.
+
+The end..
+
+
+
+
 
