@@ -1,0 +1,229 @@
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+/* main div for social media bar */
+.red-line {
+  background-color: white;
+  text-align: right;
+  height: 30px;
+}
+/* social media logos */
+.social-media-logos {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+  margin-top: 5px;
+  transition: transform 0.2s;
+}
+/* inner social media bar div to indent the logos */
+.social-media-bar {
+  display: inline-block;
+  margin-right: 15px;
+}
+/* for the store logo div inside social media bar */
+.logoDiv {
+  display: inline-block;
+  margin-left: 20px;
+  float: left;
+}
+/* logo picture */
+.logo {
+  width: 30px;
+  height: 30px;
+}
+/* main bar that contains home button */
+.white-line {
+  position: sticky;
+  top: 30px;
+  height: 70px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+}
+/* store image */
+.banner img {
+  width: 100%;
+}
+/* full image section */
+.banner {
+  text-align: center;
+}
+/* buttons inside the home bar */
+.banner-buttons h4 {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-width: 0px;
+  padding-top: 20px;
+  padding-bottom: 29px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: border-width 0.1s;
+}
+.banner-buttons {
+  text-align: center;
+  display: inline-block;
+}
+/* outer section for showcase area */
+.main {
+  text-align: center;
+  max-width: 100%;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+/* boxes that contains the clothes */
+.boxes {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  display: inline-block;
+  margin: 5% 3%;
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+}
+/* images inside boxes */
+.boxes img {
+  width: 100%;
+}
+/* items quantity label containing buttons and input area*/
+.quantity {
+  width: 100%;
+  height: 100px;
+  margin-top: 20px;
+  background-color: rgb(247, 110, 110);
+  text-align: center;
+}
+.quantity div {
+  width: 100%;
+  height: 50%;
+}
+.quantity-buttons {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 20px;
+}
+/* quantity input field */
+.quantity input {
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+/* add-to-cart button */
+.cart {
+  width: 150px;
+  height: 35px;
+}
+/* cart pop-up menu */
+.cartMenu {
+  display: none;
+  position: fixed;
+  width: 50%;
+  height: 90%;
+  border: solid red;
+  background-color: white;
+  margin: 3% 25%;
+  z-index: 99;
+  text-align: center;
+}
+/* exit button on cart pop-up menu */
+.cartExitButton {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+  border-radius: 15px;
+  outline-style: none;
+}
+/* outer div for details inside cart pop-up menu */
+.cartDetails {
+  text-align: left;
+  width: 60%;
+  height: auto;
+  margin: 50% 20%;
+}
+/* text inside cart pop-up menu */
+.cartDetailsText {
+  width: auto;
+  height: auto;
+  border-bottom: double black;
+}
+/* footer */
+.footer {
+  background-color: black;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.footer div ul {
+  display: inline-block;
+  width: 24%;
+  height: 330px;
+  margin: auto;
+  color: white;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  line-height: 200%;
+  vertical-align: top;
+}
+.footer div ul li {
+  color: grey;
+}
+.footer div ul li h3,
+.footer div ul li h2,
+.footer div ul li h4 {
+  color: white;
+}
+
+/*Pseudo classes */
+
+.banner-buttons h4:hover {
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-width: 2px;
+  padding-top: 20px;
+  padding-bottom: 29px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: solid red;
+  border-width: 3px;
+}
+.boxes:hover {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  display: inline-block;
+  margin: 5% 3%;
+  box-shadow: 0 0 8px grey;
+}
+.boxes:focus {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  display: inline-block;
+  margin: 5% 3%;
+  box-shadow: 0 0 8px red;
+}
+.social-media-logos:hover {
+  transform: scale(1.5);
+}
+.footer div ul li:hover {
+  color: white;
+}
