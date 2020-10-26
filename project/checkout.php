@@ -140,14 +140,18 @@ if (isset($_POST["addProductsToCart"])) {
 
             <?php
             // printing products list with (names, basic price, quantity and total price)
-            for ($i = 0; $i < count($products); $i++) {
-                $name = $products[$i]["name"];
-                $price = $products[$i]["price"];
-                $quantity = $products[$i]["quantity"];
-                $totalPerType = $products[$i]["total"];
-                if ($quantity == 0 && $i > 0) {
-                    continue;
-                } else if ($quantity > 0) {
+
+            if ($overallQuantity == 0) {
+                echo ("<p> Please choose your products first </p>");
+            } else {
+                for ($i = 0; $i < count($products); $i++) {
+                    $name = $products[$i]["name"];
+                    $price = $products[$i]["price"];
+                    $quantity = $products[$i]["quantity"];
+                    $totalPerType = $products[$i]["total"];
+                    if ($quantity == 0 && $i > 0) {
+                        continue;
+                    } else if ($quantity > 0) {
             ?>
 
             <ul class="receiptDevider"><?php echo ("<li> $name") ?></ul>
@@ -155,44 +159,47 @@ if (isset($_POST["addProductsToCart"])) {
             <ul class="receiptDevider"><?php echo ("<li> $quantity") ?></ul>
             <ul class="receiptDevider"><?php echo ("<li> $currencySymbol $totalPerType") ?></ul>
             <?php }
-                if ($i == 0) { ?>
+                    if ($i == 0) { ?>
             <ul class="receiptDevider"><?php echo ("<li> <b> $name </b>") ?></ul>
             <ul class="receiptDevider"><?php echo ("<li> <b> $price </b>") ?></ul>
             <ul class="receiptDevider"><?php echo ("<li> <b> $quantity </b>") ?></ul>
             <ul class="receiptDevider"><?php echo ("<li> <b> $totalPerType </b>") ?></ul>
             <?php }
-            } ?>
+                } ?>
             <!-- printing the subTotal, taxes, discounted items and total -->
             <?php
-            echo ("
-                    <p>
-                        <ul>
-                            <li> Sub-Total : $currencySymbol $subTotal
-                            <li> Taxes : $currencySymbol $taxes");
-            if ($discounts[0]["finalDiscount"] + $discounts[1]["finalDiscount"] > 0) {
+                echo ("
+                        <p>
+                            <ul>
+                                <li> Sub-Total : $currencySymbol $subTotal
+                                <li> Taxes : $currencySymbol $taxes");
+                if ($discounts[0]["finalDiscount"] + $discounts[1]["finalDiscount"] > 0) {
 
-                echo ("<li> Discounts :");;
-            }
-            for ($i = 0; $i < count($discounts); $i++) {
-                $discountedProductName = $discounts[$i]["name"];
-                $finalDiscount = $discounts[$i]["finalDiscount"];
-                if ($finalDiscount > 0) {
-                    echo ("
-                    
-                            <li style='margin-left : 66px;'> $discountedProductName : -$currencySymbol $finalDiscount
-                    ");
+                    echo ("<li> Discounts :");;
                 }
-            }
-            echo ("</ul></P>");
+                for ($i = 0; $i < count($discounts); $i++) {
+                    $discountedProductName = $discounts[$i]["name"];
+                    $finalDiscount = $discounts[$i]["finalDiscount"];
+                    if ($finalDiscount > 0) {
+                        echo ("
+                        
+                                <li style='margin-left : 66px;'> $discountedProductName : -$currencySymbol $finalDiscount
+                        ");
+                    }
+                }
+                echo ("</ul></P>");
 
-            echo ("
-                    <p>
-                        <ul>
-                            <li> Total : $total
-                        </ul>
-                    </P>                
-                ");
+                echo ("
+                        <p>
+                            <ul>
+                                <li> Total : $total
+                            </ul>
+                        </P>                
+                    ");
+            }
             ?>
+
+
             </ul>
         </div>
     </section>
